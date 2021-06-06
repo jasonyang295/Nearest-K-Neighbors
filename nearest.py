@@ -8,4 +8,11 @@ print(data.feature_names)
 print(data.target_names)
 
 x_train, x_test, y_train, y_test = train_test_split(np.array(data.data), np.array(data.target) , test_size = .2)
+#initializes data and puts it into array and assigns to correct variables
+
+clf = KNeighborsClassifier(n_neighbors=3) #trains the set based on previous variables
+clf.fit(x_train, y_train)
+
+print(clf.score(x_test, y_test)) #evaluates accuracy of test
+
 
